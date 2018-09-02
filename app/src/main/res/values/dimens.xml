@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="s_padding">10dp</dimen>
+    <dimen name="min_width_main_button">200dp</dimen>
+
+    <dimen name="text_big_size">18sp</dimen>
+    <dimen name="text_medium_size">14sp</dimen>
+    <dimen name="text_small_size">12sp</dimen>
+    <dimen name="cell_height">150dp</dimen>
+</resources>

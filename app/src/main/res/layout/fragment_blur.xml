@@ -1,0 +1,114 @@
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.peterdang.androidcatchup.features.blur.BlurViewModel" />
+
+        <variable
+            name="view"
+            type="com.peterdang.androidcatchup.features.blur.BlurFragment" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imgView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:imageUri="@{viewmodel.currentUri}"
+                    android:onClick="@{() -> view.checkPermissionAndProcessPickImg()}"
+                    android:scaleType="fitCenter"
+                    android:visibility="@{viewmodel.currentUri == null ? View.GONE : View.VISIBLE}" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:onClick="@{() -> view.checkPermissionAndProcessPickImg()}"
+                    android:padding="@dimen/s_padding"
+                    android:text="@string/Select_Image"
+                    android:visibility="@{viewmodel.currentUri != null ? View.GONE : View.VISIBLE}" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/filters_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blur_level"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="2"
+                android:padding="@dimen/s_padding"
+                android:progress="@={viewmodel.blurLevel}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->viewmodel.cancel()}"
+                    android:text="@string/cancel"
+                    android:visibility="@{safeUnbox(viewmodel.isLoading) ? View.VISIBLE : View.GONE}" />
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:indeterminate="true"
+                    android:visibility="@{safeUnbox(viewmodel.isLoading) ? View.VISIBLE : View.GONE}" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/s_padding"
+                    android:onClick="@{()->viewmodel.applyBlur()}"
+                    android:text="@string/go"
+                    android:textAllCaps="true"
+                    android:visibility="@{viewmodel.currentUri != null &amp;&amp; safeUnbox(viewmodel.isLoading) ? View.GONE : View.VISIBLE}" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->view.seeFile()}"
+                    android:text="@string/see_file"
+                    android:textAllCaps="true"
+                    android:visibility="@{viewmodel.currentUri != null &amp;&amp; !safeUnbox(viewmodel.isLoading) ? View.VISIBLE : View.GONE}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

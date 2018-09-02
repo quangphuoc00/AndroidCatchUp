@@ -1,0 +1,128 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.61'
+    ext.gradle_tools = '3.1.3'
+    ext.build_tools = '27.0.3'
+
+    ext.compile_sdk = 28
+    ext.target_sdk = 28
+    ext.min_sdk = 16
+
+    ext.application_id = 'com.peterdang.android_catch_up'
+    ext.version_name = '1.0'
+    ext.version_code = 1
+    ext.test_runner = 'android.support.test.runner.AndroidJUnitRunner'
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0-alpha08'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    //Android libraries
+    appCompat_version = '1.0.0-alpha1'
+    constraintLayout_version = '1.1.0'
+    archComponents_version = '1.1.1'
+
+    //Third party libraries
+    kotlin_coroutines_version = '0.25.0'
+    dagger_version = '2.11'
+    javaxAnnotations_version = '1.0'
+    work_version = "1.0.0-alpha08"
+    picasso_version = "2.71828"
+    javaxInject_version = '1'
+    retrofit_version = '2.3.0'
+    okhttp_logging_interceptor_version = '3.8.1'
+    bindingcollectionadapter_version = '3.0.0-beta1'
+    permission_version = '1.0.1'
+    navigation_version = '1.0.0-alpha01'
+
+    //Unit Testing
+    robolectric_version = '3.8'
+    junit_version = '4.12'
+    mockito_version = '1.4.0'
+    kluent_version = '1.14'
+
+    //Acceptance Testing
+    runner_version = '1.1.0-alpha1'
+    espresso_version = '3.1.0-alpha1'
+
+    //Development
+    leakCanaryVersion = '1.6.1'
+
+    mainApplication = [
+            kotlin                       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            kotlinCoroutines             : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version",
+            kotlinCoroutinesAndroid      : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version",
+
+            appCompat                    : "androidx.appcompat:appcompat:$appCompat_version",
+            recyclerView                 : "androidx.recyclerview:recyclerview:$appCompat_version",
+            design                       : "com.google.android.material:material:$appCompat_version",
+            androidAnnotations           : "androidx.annotation:annotation:$appCompat_version",
+
+            workmanager                  : "android.arch.work:work-runtime:$work_version",
+
+            constraintLayout             : "androidx.constraintlayout:constraintlayout:$constraintLayout_version",
+
+            imageLoader                  : "com.squareup.picasso:picasso:$picasso_version",
+
+            permission                   : "com.github.florent37:runtime-permission-kotlin:$permission_version",
+
+            navigation                   : "android.arch.navigation:navigation-ui:$navigation_version",
+            navigationFragment           : "android.arch.navigation:navigation-fragment:$navigation_version",
+
+
+            bindingcollectionadapter     : "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:$bindingcollectionadapter_version",
+            bindingcollectionRecyclerView: "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:$bindingcollectionadapter_version",
+
+            daggerCompiler               : "com.google.dagger:dagger-compiler:$dagger_version",
+            dagger                       : "com.google.dagger:dagger:$dagger_version",
+            javaxAnnotation              : "javax.annotation:jsr250-api:$javaxAnnotations_version",
+            javaxInject                  : "javax.inject:javax.inject:$javaxInject_version",
+            retrofit                     : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            okhttpLoggingInterceptor     : "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor_version",
+    ]
+
+    unitTesting = [
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            kotlinTest : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
+            robolectric: "org.robolectric:robolectric:$robolectric_version",
+            junit      : "junit:junit:$junit_version",
+            mockito    : "com.nhaarman:mockito-kotlin:$mockito_version",
+            kluent     : "org.amshove.kluent:kluent:$kluent_version",
+    ]
+
+    acceptanceTesting = [
+            testRunner        : "androidx.test:runner:$runner_version",
+            testRules         : "androidx.test:rules:$runner_version",
+            espressoCore      : "androidx.test.espresso:espresso-core:$espresso_version",
+            espressoIntents   : "androidx.test.espresso:espresso-intents:$espresso_version",
+            androidAnnotations: "androidx.annotation:annotation:$appCompat_version",
+            workmanager       : "android.arch.work:work-testing:$work_version"
+    ]
+
+    development = [
+            leakCanary    : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            leakCanaryNoop: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+    ]
+}

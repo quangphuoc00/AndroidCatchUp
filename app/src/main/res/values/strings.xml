@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Android-Catch-Up</string>
+    <string name="title_workmanager">Module Title</string>
+
+    <string name="config_base_url">BASE_API_URL</string>
+
+    <string name="action_refresh">Refresh</string>
+
+    <string name="failure_network_connection">No Network Connection.</string>
+    <string name="failure_server_error">Server Error</string>
+    <string name="failure_movies_list_unavailable">Movies Unavailable.</string>
+    <string name="failure_movie_non_existent">Movie Not Existent.</string>
+    <string name="hire_me">Hire me</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="simple_util_notification_title_template">Simple util: %1$s</string>
+
+    <!-- TODO: remove this placeholder text -->
+    <string name="simple_util_notification_placeholder_text_template">You said %1$s and lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Etiam non enim magna. Morbi dictum, velit vel
+        semper venenatis, magna odio volutpat velit, at ullamcorper nulla lacus sed turpis.
+        Pellentesque vitae metus elit, nec tincidunt tellus. Integer sed nisl sem, ullamcorper
+        ornare lacus. Duis ac mauris sed massa congue volutpat. Donec sed erat sit amet turpis
+        viverra rhoncus sit amet nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec
+        tortor.
+    </string>
+
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
+    <string name="blur_level">Blur Level</string>
+    <string name="cancel">cancel</string>
+    <string name="go">go</string>
+    <string name="see_file">see file</string>
+    <string name="Select_Image">Select Image</string>
+    <string name="we_need_your_permission">We need your permissions</string>
+    <string name="ok">ok</string>
+    <string name="no">no</string>
+    <string name="setting">setting</string>
+    <string name="blur_completed">blurring process is completed</string>
+    <string name="ActivityNotImp">Activity hasn\'t not implemented yet</string>
+</resources>

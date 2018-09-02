@@ -1,0 +1,10 @@
+<manifest xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.peterdang.workmanager">
+
+    <dist:module
+        dist:onDemand="true"
+        dist:title="@string/title_workmanager">
+        <dist:fusing dist:include="true" />
+    </dist:module>
+</manifest>
+

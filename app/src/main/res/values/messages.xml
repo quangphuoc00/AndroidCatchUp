@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="require_min_android_version">This function requires Android version above 4.3.0</string>
+</resources>
