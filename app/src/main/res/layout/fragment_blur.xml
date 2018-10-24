@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:onClick="@{() -> view.checkPermissionAndProcessPickImg()}"
-                    android:padding="@dimen/s_padding"
+                    android:padding="@dimen/m_padding"
                     android:text="@string/Select_Image"
                     android:visibility="@{viewmodel.currentUri != null ? View.GONE : View.VISIBLE}" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:max="2"
-                android:padding="@dimen/s_padding"
+                android:padding="@dimen/m_padding"
                 android:progress="@={viewmodel.blurLevel}" />
 
             <LinearLayout
@@ -92,7 +92,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/s_padding"
+                    android:layout_marginRight="@dimen/m_padding"
                     android:onClick="@{()->viewmodel.applyBlur()}"
                     android:text="@string/go"
                     android:textAllCaps="true"

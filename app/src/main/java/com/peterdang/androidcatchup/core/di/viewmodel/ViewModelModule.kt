@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.peterdang.androidcatchup.features.blur.BlurViewModel
 import com.peterdang.androidcatchup.features.home.HomeViewModel
+import com.peterdang.androidcatchup.features.location.LocationViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -23,5 +24,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(BlurViewModel::class)
     abstract fun bindsBlurViewModel(blurViewModel: BlurViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LocationViewModel::class)
+    abstract fun bindsLocationViewModel(locationViewModel: LocationViewModel): ViewModel
 
 }

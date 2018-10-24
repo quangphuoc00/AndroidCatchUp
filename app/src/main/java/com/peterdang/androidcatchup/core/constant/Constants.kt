@@ -5,6 +5,7 @@ sealed class Constants {
         companion object {
             const val ROOM = "room"
             const val WORKMANAGER = "workmanager"
+            const val SERVICE_ANDROID_O = "service_android_o"
             const val PAGGING = "pagging"
             const val SLICE = "slice"
             const val DOWNLOAD_MANAGER = "download_manager"
@@ -24,7 +25,16 @@ sealed class Constants {
     open class RequestCode {
         companion object {
             const val REQUEST_CODE_IMAGE = 100
+            const val REQUEST_CODE_LOCATION = 34
             const val REQUEST_CODE_PERMISSIONS = 101
+        }
+    }
+
+    open class LocationConfig {
+        companion object {
+            const val LOCATION_UPDATE_INTERVAL = 5*1000L
+            const val LOCATION_FASTEST_UPDATE_INTERVAL = LOCATION_UPDATE_INTERVAL/2
+            const val LOCATION_MAX_WAIT_TIME = LOCATION_UPDATE_INTERVAL * 3
         }
     }
 

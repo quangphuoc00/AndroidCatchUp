@@ -16,7 +16,7 @@ import javax.inject.Inject
  *
  *  Credit at: https://codelabs.developers.google.com/codelabs/android-workmanager/#7
  */
-class BlurUseCase
+class BlurUtil
 @Inject constructor() {
     var mWorkManager: WorkManager
 

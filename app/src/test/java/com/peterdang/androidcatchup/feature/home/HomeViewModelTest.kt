@@ -38,7 +38,7 @@ class HomeViewModelTest : AndroidTest() {
     @Mock
     private lateinit var navigationUsecase: NavigateUsecase
 
-    private val obj1 = FunctionModel(0, "function_name", "tech_name", "function_code")
+    private val obj1 = FunctionModel(0, "functionName", "techName", "functionCode")
 
     @Before
     fun setUp() {

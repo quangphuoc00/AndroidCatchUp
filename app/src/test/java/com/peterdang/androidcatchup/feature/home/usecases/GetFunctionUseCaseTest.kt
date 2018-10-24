@@ -45,9 +45,9 @@ class GetFunctionUseCaseTest : UnitTest() {
                 Either.SuccessResult(
                         listOf(
                                 FunctionModel(0,
-                                        "function_name",
-                                        "tech_name",
-                                        "function_code"))))
+                                        "functionName",
+                                        "techName",
+                                        "functionCode"))))
     }
 
 

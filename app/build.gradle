@@ -68,8 +68,6 @@ android {
         androidTest.java.srcDirs += 'src/androidTest/kotlin'
     }
 
-    dynamicFeatures = [":workmanager"]
-
     dataBinding {
         enabled = true
     }
@@ -109,6 +107,7 @@ dependencies {
     implementation applicationDependencies.navigationFragment
     implementation applicationDependencies.navigation
     implementation applicationDependencies.workmanager
+    implementation applicationDependencies.googleServiceLocation
 
 
 //Unit/Integration tests dependencies
@@ -133,6 +132,7 @@ dependencies {
     testImplementation developmentDependencies.leakCanaryNoop
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
 }
 
 kotlin {

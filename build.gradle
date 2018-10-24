@@ -5,8 +5,8 @@ buildscript {
     ext.gradle_tools = '3.1.3'
     ext.build_tools = '27.0.3'
 
-    ext.compile_sdk = 28
-    ext.target_sdk = 28
+    ext.compile_sdk = "android-O"
+    ext.target_sdk = "O"
     ext.min_sdk = 16
 
     ext.application_id = 'com.peterdang.android_catch_up'
@@ -43,6 +43,8 @@ ext {
     appCompat_version = '1.0.0-alpha1'
     constraintLayout_version = '1.1.0'
     archComponents_version = '1.1.1'
+
+    googleServiceLocation_version = '10.2.4'
 
     //Third party libraries
     kotlin_coroutines_version = '0.25.0'
@@ -101,6 +103,9 @@ ext {
             javaxInject                  : "javax.inject:javax.inject:$javaxInject_version",
             retrofit                     : "com.squareup.retrofit2:converter-gson:$retrofit_version",
             okhttpLoggingInterceptor     : "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor_version",
+
+            googleServiceLocation        : "com.google.android.gms:play-services-location:$googleServiceLocation_version",
+
     ]
 
     unitTesting = [

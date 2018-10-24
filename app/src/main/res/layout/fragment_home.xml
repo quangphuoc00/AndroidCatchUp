@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout>
 
     <data>
 
@@ -14,9 +12,12 @@
             type="com.peterdang.androidcatchup.features.home.HomeViewModel" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -53,36 +54,43 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <!--<android.support.v4.widget.NestedScrollView-->
+        <!--<androidx.core.widget.NestedScrollView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
+        <!--android:background="@android:color/black"-->
         <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
-        <!--<TextView-->
+        <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:lineSpacingExtra="8dp"-->
-        <!--android:text="@string/lorem"-->
-        <!--android:textSize="20sp" />-->
-        <!--</android.support.v4.widget.NestedScrollView>-->
+        <!--android:layout_height="match_parent">-->
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="@string/my_name"-->
+        <!--android:textColor="@color/colorTextPrimary" />-->
+
+        <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:onRefreshListener="@{() -> viewmodel.loadListFunction()}"-->
+        <!--app:refreshing="@{safeUnbox(viewmodel.isLoading)}">-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:onRefreshListener="@{() -> viewmodel.loadListFunction()}"
-            app:refreshing="@{safeUnbox(viewmodel.isLoading)}">
+            android:background="@android:color/black"
+            android:clipToPadding="false"
+            android:padding="@dimen/space_item"
+            app:itemBinding="@{viewmodel.itemBinding}"
+            app:items="@{viewmodel.functions}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:itemBinding="@{viewmodel.itemBinding}"
-                app:items="@{viewmodel.functions}"
-                app:layoutManager="@{LayoutManagers.grid(2)}"
-                tools:context="com.peterdang.androidcatchup.features.home.HomeFragment" />
-
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+        <!--</LinearLayout>-->
+        <!--</androidx.core.widget.NestedScrollView>-->
 
         <!--<FrameLayout-->
         <!--android:layout_width="wrap_content"-->

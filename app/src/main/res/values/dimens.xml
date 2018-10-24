@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="s_padding">10dp</dimen>
-    <dimen name="min_width_main_button">200dp</dimen>
+    <dimen name="s_padding">5dp</dimen>
+    <dimen name="m_padding">10dp</dimen>
+    <dimen name="l_padding">15dp</dimen>
 
     <dimen name="text_big_size">18sp</dimen>
     <dimen name="text_medium_size">14sp</dimen>
     <dimen name="text_small_size">12sp</dimen>
-    <dimen name="cell_height">150dp</dimen>
+
+    <dimen name="space_item">5dp</dimen>
+    <dimen name="elevation_shadow">5dp</dimen>
+
+    <dimen name="cell_width">200dp</dimen>
+    <dimen name="cell_height">120dp</dimen>
+
+    <dimen name="min_width_main_button">200dp</dimen>
 </resources>

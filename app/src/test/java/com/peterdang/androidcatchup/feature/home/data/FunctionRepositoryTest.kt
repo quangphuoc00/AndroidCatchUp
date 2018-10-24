@@ -70,7 +70,7 @@ class FunctionRepositoryTest : UnitTest() {
 
     @Test
     fun `should get function list from service`() {
-        val lstFunction = listOf(FunctionModel(0, "function_name", "tech_name", "function_code"))
+        val lstFunction = listOf(FunctionModel(0, "functionName", "techName", "functionCode"))
         given { networkHandler.isNetworkAvailable() }.willReturn(true)
         given { functionsResponse.body() }.willReturn(lstFunction)
         given { functionsResponse.isSuccessful }.willReturn(true)

@@ -21,9 +21,14 @@ import com.peterdang.androidcatchup.core.extensions.appContext
 import com.peterdang.androidcatchup.core.extensions.viewContainer
 import com.peterdang.androidcatchup.features.home.usecases.NavigateUsecase
 import javax.inject.Inject
+import android.app.ProgressDialog
+
+
 
 abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
     abstract fun layoutId(): Int
+
+    private lateinit var dialog: ProgressDialog
 
     protected lateinit var viewModel: VM
 
@@ -43,6 +48,9 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
     internal fun notify(@StringRes message: Int) =
             viewContainer.view?.let { Snackbar.make(it, message, Snackbar.LENGTH_SHORT).show() }
 
+    internal fun notify(message: String) =
+            viewContainer.view?.let { Snackbar.make(it, message, Snackbar.LENGTH_SHORT).show() }
+
     internal fun notifyWithAction(@StringRes message: Int, @StringRes actionText: Int, action: () -> Any) {
         val snackBar = viewContainer.view?.let { Snackbar.make(it, message, Snackbar.LENGTH_INDEFINITE) }
         if (snackBar != null) {
@@ -59,6 +67,8 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
         val binding: ViewDataBinding = DataBindingUtil.inflate(
                 inflater, layoutId(), container, false)
         setBindingVariable(binding)
+        dialog = ProgressDialog(context)
+        dialog.setMessage(getString(R.string.loading))
         return binding.root
     }
 
@@ -79,6 +89,14 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
 //        emptyView.visible()
 //        hideProgress()
         notifyWithAction(message, R.string.action_refresh, ::onRefresh)
+    }
+
+    protected fun showProgressDialog(){
+        dialog.show()
+    }
+
+    protected fun dimissProgressDialog(){
+        dialog.dismiss()
     }
 
     protected fun onRefresh() {}

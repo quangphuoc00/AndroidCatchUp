@@ -7,6 +7,8 @@ import com.peterdang.androidcatchup.MyApplication
 import com.peterdang.androidcatchup.R
 import com.peterdang.androidcatchup.core.utils.ConfigReader
 import com.peterdang.androidcatchup.core.utils.ImageUtils
+import com.peterdang.androidcatchup.features.location.helper.LocationRequestHelper
+import com.peterdang.androidcatchup.features.location.helper.LocationResultHelper
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -28,6 +30,14 @@ class AppModule(private val myApp: MyApplication) {
     @Provides
     @Singleton
     fun provideConfigReader(): ConfigReader = ConfigReader(myApp)
+
+    @Provides
+    @Singleton
+    fun provideLocationResultUtil(): LocationResultHelper = LocationResultHelper(myApp)
+
+    @Provides
+    @Singleton
+    fun provideLocationRequestHelper(): LocationRequestHelper = LocationRequestHelper(myApp)
 
     @Provides
     @Singleton

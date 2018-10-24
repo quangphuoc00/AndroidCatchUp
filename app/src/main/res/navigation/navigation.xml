@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_functionsFragment_to_roomFragment"
             app:destination="@id/roomFragment" />
+        <action
+            android:id="@+id/action_functionsFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
     </fragment>
     <fragment
         android:id="@+id/blurFragment"
@@ -26,5 +29,9 @@
         android:id="@+id/roomFragment"
         android:name="com.peterdang.androidcatchup.features.room.RoomFragment"
         android:label="RoomFragment" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.peterdang.androidcatchup.features.location.LocationFragment"
+        android:label="LocationFragment" />
 
 </navigation>

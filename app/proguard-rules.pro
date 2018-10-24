@@ -6,7 +6,7 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class function_name to the JavaScript interface
+# and specify the fully qualified class functionName to the JavaScript interface
 # class:
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
@@ -17,7 +17,7 @@
 #-keepattributes SourceFile,LineNumberTable
 
 # If you keep the line number information, uncomment this to
-# hide the original source file function_name.
+# hide the original source file functionName.
 #-renamesourcefileattribute SourceFile
 -keepclassmembernames class kotlinx.** {
     volatile <fields>;

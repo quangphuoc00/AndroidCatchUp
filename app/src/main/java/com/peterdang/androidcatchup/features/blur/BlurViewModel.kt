@@ -12,7 +12,7 @@ import com.peterdang.androidcatchup.core.constant.Constants
 import javax.inject.Inject
 
 class BlurViewModel
-@Inject constructor(private val blurUseCase: BlurUseCase) : BaseViewModel() {
+@Inject constructor(private val blurUtil: BlurUtil) : BaseViewModel() {
     private val TAG = "BlurViewModel"
 
     var mWorkStatus: LiveData<List<WorkStatus>> = MutableLiveData()
@@ -21,17 +21,17 @@ class BlurViewModel
     var currentUri: ObservableField<Uri> = ObservableField()
 
     init {
-        mWorkStatus = blurUseCase.getStatusBlur()
+        mWorkStatus = blurUtil.getStatusBlur()
     }
 
     fun applyBlur() {
         isLoading.set(true)
-        blurUseCase.run(blurLevel.get()!!, currentUri.get())
+        blurUtil.run(blurLevel.get()!!, currentUri.get())
     }
 
     fun cancel() {
         isLoading.set(false)
-        blurUseCase.cancelWorker()
+        blurUtil.cancelWorker()
     }
 
     override fun onCleared() {

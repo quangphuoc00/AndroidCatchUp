@@ -35,13 +35,13 @@ import javax.inject.Inject
 class HomeViewModel
 @Inject constructor(private val getFunctionUsecase: GetFunctionUsecase,
                     private val navigateUsecase: NavigateUsecase) : BaseViewModel() {
-    //    var functions: MutableLiveData<List<FunctionModel>> = MutableLiveData()
+    //    var datas: MutableLiveData<List<FunctionModel>> = MutableLiveData()
     var navFragment: MutableLiveData<Int> = MutableLiveData()
     var functions: ObservableList<FunctionModel> = ObservableArrayList<FunctionModel>()
 
     val onItemClick = object : ItemRecyclerViewClick<FunctionModel> {
         override fun onItemClick(item: FunctionModel) {
-            navigateUsecase(item.function_code) { it ->
+            navigateUsecase(item.functionCode) { it ->
                 it.either(::handleFailure, ::handleNavigate)
             }
         }

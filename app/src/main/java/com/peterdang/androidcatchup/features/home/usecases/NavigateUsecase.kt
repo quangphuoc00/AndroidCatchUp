@@ -13,6 +13,7 @@ class NavigateUsecase
         val layoutId = when (functionCode) {
             Constants.FunctionCode.ROOM -> R.id.roomFragment
             Constants.FunctionCode.WORKMANAGER -> R.id.blurFragment
+            Constants.FunctionCode.SERVICE_ANDROID_O -> R.id.locationFragment
             else -> null
         }
 

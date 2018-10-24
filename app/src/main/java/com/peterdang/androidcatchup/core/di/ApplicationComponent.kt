@@ -5,6 +5,7 @@ import com.peterdang.androidcatchup.core.di.viewmodel.ViewModelModule
 import com.peterdang.androidcatchup.features.MainActivity
 import com.peterdang.androidcatchup.features.blur.BlurFragment
 import com.peterdang.androidcatchup.features.home.HomeFragment
+import com.peterdang.androidcatchup.features.location.LocationFragment
 import com.peterdang.androidcatchup.features.room.RoomFragment
 import dagger.Component
 import javax.inject.Singleton
@@ -16,6 +17,7 @@ interface ApplicationComponent {
     fun inject(homeActivity: MainActivity)
 
     fun inject(roomFragment: RoomFragment)
+    fun inject(locationFragment: LocationFragment)
     fun inject(functionFragment: HomeFragment)
     fun inject(blurFragment: BlurFragment)
 }

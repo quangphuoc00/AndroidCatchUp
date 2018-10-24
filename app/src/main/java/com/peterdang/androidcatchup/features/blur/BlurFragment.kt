@@ -10,10 +10,10 @@ import android.provider.MediaStore
 import android.util.Log
 import androidx.databinding.ViewDataBinding
 import com.github.florent37.runtimepermission.RuntimePermission
+import com.peterdang.androidcatchup.core.constant.Constants
 import com.peterdang.androidcatchup.BR
 import com.peterdang.androidcatchup.R
 import com.peterdang.androidcatchup.core.blueprints.BaseFragment
-import com.peterdang.androidcatchup.core.constant.Constants
 import com.peterdang.androidcatchup.core.extensions.observe
 import com.peterdang.androidcatchup.core.extensions.viewModel
 
